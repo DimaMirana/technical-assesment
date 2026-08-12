@@ -1,0 +1,81 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  width: max-content;
+
+  display: flex;
+  gap: 12px;
+
+  animation-name: marquee;
+  animation-duration: var(--marquee-duration, 30s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  will-change: transform;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+.imageCard {
+  flex: 0 0 180px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid $color-bg-muted;
+  background-color: #16161640;
+  border-radius: $radius-sm;
+  -webkit-border-radius: $radius-sm;
+  -moz-border-radius: $radius-sm;
+  -ms-border-radius: $radius-sm;
+  -o-border-radius: $radius-sm;
+
+  @include tablet {
+    flex-basis: 220px;
+    height: 130px;
+  }
+
+  @include desktop {
+    flex-basis: 280px;
+    height: 150px;
+
+    padding: 24px;
+  }
+}
+
+.image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 75%;
+  max-height: 60px;
+
+  object-fit: contain;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation-play-state: paused;
+  }
+}

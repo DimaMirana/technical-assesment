@@ -1,0 +1,94 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+
+  padding-top: 16px;
+}
+
+.card {
+  position: relative;
+
+  min-height: 300px;
+
+  overflow: hidden;
+
+  border: 1px solid $color-bg-muted;
+  border-radius: $radius-lg;
+
+  background-color: $color-black;
+
+  color: $color-primary;
+
+  isolation: isolate;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  transform: scale(1.03);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+
+  max-width: 280px;
+
+  padding: 28px;
+
+  font-family: $font-heading;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+
+  color: $color-primary;
+
+  transition: color 0.35s ease;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    .image {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .overlay {
+      opacity: 1;
+    }
+
+    .title {
+      color: $color-white;
+    }
+  }
+}

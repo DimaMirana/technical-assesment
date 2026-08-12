@@ -1,0 +1,92 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.sectionIntro {
+  width: 100%;
+
+  padding-block: 56px;
+
+  background-color: $color-white;
+  color: $color-black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.label {
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heading {
+  max-width: 600px;
+
+  font-family: $font-heading;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.description {
+  max-width: 620px;
+
+  font-family: $font-body;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.largeDescription {
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.highlight {
+  font-weight: 800;
+}
+
+
+// =========================
+// Desktop
+// =========================
+
+@include desktop {
+  .sectionIntro {
+    padding-block: 88px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    align-items: start;
+    gap: 64px;
+  }
+
+  .heading {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .largeDescription {
+    max-width: 760px;
+
+    font-size: 30px;
+    line-height: 1.25;
+  }
+}

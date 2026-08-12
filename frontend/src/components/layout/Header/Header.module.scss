@@ -1,0 +1,231 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.header {
+  position: relative;
+
+  width: 100%;
+
+  background-color: $color-bg-dark;
+  color: $color-white;
+}
+
+.navbar {
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+
+  border-radius: $radius-sm;
+
+  background-color: $color-bg-navbar;
+}
+
+.logo {
+  font-family: $font-body;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.desktopNav,
+.desktopCta,
+.desktopMegaMenu {
+  display: none;
+}
+
+
+// ==========================
+// Mobile
+// ==========================
+
+.menuButton {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  background: transparent;
+  color: $color-white;
+
+  span {
+    width: 22px;
+    height: 2px;
+
+    background: currentColor;
+
+    transition: transform 0.2s ease;
+  }
+}
+
+.menuOpen {
+  span {
+    &:first-child {
+      transform: translateY(4px) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 16px 32px;
+
+  background-color: $color-bg-navbar;
+}
+
+.mobileNavLink {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 16px;
+
+  border: 0;
+
+  font-family: $font-body;
+  font-size: 18px;
+  font-weight: 600;
+
+  text-align: left;
+
+  color: $color-white;
+  background: transparent;
+}
+
+.mobileSubmenu {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 16px;
+  padding-bottom: 12px;
+
+  a {
+    padding-block: 12px;
+
+    font-family: $font-body;
+    font-size: 15px;
+
+    color: $color-primary;
+  }
+}
+
+.mobileCta {
+  margin-top: 20px;
+
+  padding: 14px 20px;
+
+  border-radius: $radius-md;
+
+  text-align: center;
+
+  background-color: $color-bg-muted;
+}
+
+
+// ==========================
+// Desktop
+// ==========================
+
+@include desktop {
+  .navbar {
+    min-height: 80px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    padding: 18px 16px;
+
+    border-radius: $radius-lg;
+  }
+
+  .logo {
+    justify-self: start;
+  }
+
+  .desktopNav {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    justify-self: center;
+  }
+
+  .navLink {
+    border: 0;
+
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 500;
+
+    color: $color-white;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .activeNavLink {
+    color: $color-primary;
+  }
+
+  .desktopCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    justify-self: end;
+
+    padding: 14px 22px;
+
+    border-radius: $radius-md;
+
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 600;
+
+    color: $color-white;
+    background-color: $color-bg-muted;
+  }
+
+  .desktopMegaMenu {
+    display: block;
+
+    padding-inline: 16px;
+    padding-bottom: 16px;
+
+    background-color: $color-bg-navbar;
+
+    border-radius: 0 0 $radius-lg $radius-lg;
+  }
+
+  .menuButton,
+  .mobileNav {
+    display: none;
+  }
+}

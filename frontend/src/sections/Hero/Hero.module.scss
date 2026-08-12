@@ -1,0 +1,260 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.hero {
+  background-color: $color-bg-dark;
+  color: $color-white;
+
+  padding-block: 48px 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+
+  text-transform: capitalize;
+}
+
+.highlight {
+  color: $color-primary;
+}
+
+.copy {
+  margin-top: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.description {
+  max-width: 360px;
+
+  font-family: $font-body;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.cta {
+  margin-top: 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  border-radius: $radius-md;
+
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 700;
+
+  color: $color-black;
+  background-color: $color-primary;
+}
+
+.media {
+  position: relative;
+
+  margin-top: 52px;
+}
+
+.image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: $radius-lg;
+
+  object-fit: cover;
+  
+  -webkit-mask-image: url("/hero-mask.png");
+  mask-image: url("/hero-mask.png");
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.playButton {
+  position: relative;
+  z-index: 2;
+
+  width: 100px;
+  height: 100px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  background-color: #0b6a46;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    width: 74px;
+    height: 74px;
+
+    border-radius: 50%;
+
+    background-color: #17b96c;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+
+    background-color: $color-primary;
+  }
+}
+
+.playIcon {
+  position: relative;
+  z-index: 3;
+
+  width: 0;
+  height: 0;
+
+  margin-left: 5px;
+
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid $color-bg-dark;
+}
+
+.video {
+  display: block;
+
+  width: 100%;
+  max-height: 80vh;
+
+  background: #000;
+}
+
+// =========================
+// Desktop
+// =========================
+
+@include desktop {
+  .hero {
+    padding-block: 72px 48px;
+  }
+
+  .content {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+    grid-template-areas:
+      "heading copy"
+      "media media";
+
+    column-gap: 96px;
+    row-gap: 110px;
+  }
+
+  .headingBlock {
+    grid-area: heading;
+  }
+
+  .copy {
+    grid-area: copy;
+
+    margin-top: 20px;
+  }
+
+  .title {
+    max-width: 720px;
+
+    font-size: 72px;
+    line-height: 72px;
+  }
+
+  .description {
+    max-width: 390px;
+
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .cta {
+    margin-top: 24px;
+
+    padding: 14px 34px;
+  }
+
+  .media {
+    grid-area: media;
+
+    position: relative;
+
+    margin-top: 0;
+  }
+
+  .image {
+    width: 100%;
+
+    border-radius: 32px;
+  }
+
+  .playButton {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+
+    width: 126px;
+    height: 126px;
+
+    border: 18px solid $color-bg-dark;
+
+    &::before {
+      width: 88px;
+      height: 88px;
+    }
+
+    &::after {
+      width: 62px;
+      height: 62px;
+    }
+  }
+
+  .playIcon {
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 16px;
+  }
+}

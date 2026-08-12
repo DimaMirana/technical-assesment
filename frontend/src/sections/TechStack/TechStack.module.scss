@@ -1,0 +1,28 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.techStack {
+  overflow: hidden;
+
+  padding-block: 64px;
+
+  background-color: $color-white;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@include desktop {
+  .techStack {
+    padding-block: 96px;
+  }
+
+  .title {
+    margin-bottom: 56px;
+
+    font-size: 56px;
+  }
+}

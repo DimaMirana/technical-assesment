@@ -1,0 +1,214 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.solutions {
+  position: relative;
+
+  background-color: $color-bg-light;
+  color: $color-black;
+
+  padding-bottom: 56px;
+}
+
+
+// ========================
+// Sticky tabs
+// ========================
+
+.stickyNav {
+  position: sticky;
+  top: 0;
+
+  z-index: 20;
+
+  padding-block: 20px;
+
+  background-color: $color-bg-light;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+
+  width: 100%;
+
+  overflow-x: auto;
+
+  // hide scrollbar
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  flex: 0 0 auto;
+
+  padding: 14px 24px;
+
+  border: 0;
+  border-radius: $radius-sm;
+
+  white-space: nowrap;
+
+  font-family: $font-body;
+  font-size: 16px;
+  font-weight: 600;
+
+  color: $color-black;
+  background-color: $color-white;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.activeTab {
+  color: $color-primary;
+  background-color: #161616;
+}
+
+
+// ========================
+// Main information
+// ========================
+
+.intro {
+  padding-top: 72px;
+}
+
+.number {
+  font-family: $font-heading;
+  font-size: 104px;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.copy {
+  margin-top: 44px;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.description {
+  max-width: 540px;
+
+  margin-top: 26px;
+
+  font-family: $font-body;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 28px;
+  padding: 13px 24px;
+
+  border-radius: $radius-md;
+
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 600;
+
+  color: $color-white;
+  background-color: #161616;
+}
+
+
+// ========================
+// Cards
+// ========================
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  margin-top: 108px;
+}
+
+
+// ========================
+// Desktop
+// ========================
+
+@include desktop {
+  .solutions {
+    padding-bottom: 80px;
+  }
+
+  .stickyNav {
+    padding-block: 20px;
+  }
+
+  .tabs {
+    width: fit-content;
+
+    margin-inline: auto;
+
+    overflow: visible;
+
+    padding: 4px;
+
+    border-radius: $radius-md;
+    background-color: $color-white;
+  }
+
+  .tab {
+    min-width: 190px;
+
+    padding: 16px 26px;
+
+    text-align: center;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+
+    padding-top: 72px;
+  }
+
+  .number {
+    font-size: 128px;
+  }
+
+  .copy {
+    margin-top: 0;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    margin-top: 20px;
+
+    font-size: 16px;
+  }
+
+  .cta {
+    margin-top: 24px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    margin-top: 56px;
+  }
+}

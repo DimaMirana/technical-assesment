@@ -1,0 +1,124 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+
+// ====================================
+// Mobile
+// Figma shows expanded/dark state
+// ====================================
+
+.card {
+  min-height: 340px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 28px 22px;
+
+  border-radius: $radius-lg;
+
+  color: $color-white;
+  background-color: $color-bg-dark;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.1;
+
+  color: $color-primary;
+}
+
+.description {
+  font-family: $font-body;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+
+// ====================================
+// Desktop
+// ====================================
+
+@include desktop {
+  .card {
+    min-height: 430px;
+
+    position: relative;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    color: $color-black;
+    background-color: $color-white;
+
+    overflow: hidden;
+
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease;
+  }
+
+  .title {
+    position: absolute;
+
+    top: 50%;
+    left: 40px;
+    right: 40px;
+
+    transform: translateY(-50%);
+
+    text-align: center;
+
+    color: $color-black;
+
+    transition:
+      top 0.35s ease,
+      transform 0.35s ease,
+      color 0.35s ease,
+      text-align 0.35s ease;
+  }
+
+  .description {
+    position: absolute;
+
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.35s ease;
+  }
+
+  // Only apply hover behavior on devices
+  // that actually support hover.
+  @media (hover: hover) {
+    .card:hover {
+      background-color: $color-bg-dark;
+      color: $color-white;
+
+      .title {
+        top: 40px;
+
+        transform: translateY(0);
+
+        text-align: left;
+
+        color: $color-primary;
+      }
+
+      .description {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
