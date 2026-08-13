@@ -25,6 +25,9 @@ const Header = ({ navigation }) => {
         (item) => item.id === activeMegaMenu
     );
 
+    const isNavExpanded =
+        isMobileMenuOpen || activeItem?.type === "mega-menu";
+
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
         setExpandedMobileItem(null);
@@ -34,7 +37,8 @@ const Header = ({ navigation }) => {
         <header className={styles.header}>
             <Container>
 
-                <div className={styles.navbar}>
+                <div className={`${styles.navbar} ${isNavExpanded ? styles.navbarExpanded : ""
+                    }`}>
                     {/* Logo */}
                     <a
                         href={logo.href}

@@ -21,4 +21,4 @@ npm-debug.log*
 .idea/
 
 # Generated typings
-typings/
+*typings/*

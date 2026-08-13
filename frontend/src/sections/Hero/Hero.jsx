@@ -53,6 +53,7 @@ const Hero = ({ data }) => {
                                 type="button"
                                 className={styles.playButton}
                                 aria-label="Play video"
+                                onClick={() => setIsVideoOpen(true)}
                             >
                                 <span className={styles.playIcon} />
                             </button>
@@ -71,19 +72,13 @@ const Hero = ({ data }) => {
                 onClose={() => setIsVideoOpen(false)}
                 ariaLabel={video.title}
             >
-                <video
+                <iframe
                     className={styles.video}
-                    controls
-                    autoPlay
-                    playsInline
-                >
-                    <source
-                        src={getAssetUrl(video.src)}
-                        type="video/mp4"
-                    />
-
-                    Your browser does not support video playback.
-                </video>
+                    src={`${video.src}?autoplay=1`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                />
             </Modal>
         </>
         

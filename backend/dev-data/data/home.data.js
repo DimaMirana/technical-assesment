@@ -22,7 +22,7 @@ const homeData = {
         },
 
         video: {
-            src: "/video/metatech-intro.mp4",
+            src: "https://www.youtube.com/embed/hl3lw4aOeug",
             title: "MetaTech Introduction"
         }
     },
