@@ -34,6 +34,12 @@ Install dependencies:
 ```bash
 npm install
 ```
+Create a `config.env` file inside the `backend` directory:
+
+```env
+NODE_ENV = development
+PORT = 3000
+```
 
 Start the development server:
 
@@ -111,6 +117,7 @@ technical-assesment/
 │       │       ├── Carousel/
 │       │       ├── Marquee/
 │       │       └── Modal/
+|       |       |--SectionIntro/
 │       │
 │       ├── context/
 │       │   ├── HomeContext.js
