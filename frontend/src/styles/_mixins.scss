@@ -11,3 +11,23 @@
     @content;
   }
 }
+
+@mixin heading-xl {
+  font-family: $font-heading;
+  font-size: $font-4xl;
+  font-weight: $font-extrabold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  
+  @include desktop {
+    font-size: $font-4xl;
+    line-height: $line-height-relaxed;
+  }
+}
+
+@mixin body-md {
+  font-family: $font-body;
+  font-size: $font-md;
+  font-weight: $font-regular;
+  line-height: $line-height-normal;
+}

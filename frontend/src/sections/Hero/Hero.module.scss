@@ -14,11 +14,12 @@
 }
 
 .title {
-  font-family: $font-heading;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.05em;
+//   font-family: $font-heading;
+//   font-size: 40px;
+//   font-weight: 800;
+//   line-height: 1;
+//   letter-spacing: -0.05em;
+    @include heading-xl;
 
   text-transform: capitalize;
 }
@@ -71,25 +72,22 @@
 
 .image {
   display: block;
-
   width: 100%;
   height: auto;
-
-  border-radius: $radius-lg;
-
   object-fit: cover;
-  
   -webkit-mask-image: url("/hero-mask.png");
   mask-image: url("/hero-mask.png");
-
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-
   -webkit-mask-position: center;
   mask-position: center;
-
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
+  border-radius: $radius-lg;
+  -webkit-border-radius: $radius-lg;
+  -moz-border-radius: $radius-lg;
+  -ms-border-radius: $radius-lg;
+  -o-border-radius: $radius-lg;
 }
 
 .playButton {

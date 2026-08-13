@@ -9,12 +9,13 @@ import TechStack from "../../sections/TechStack/TechStack";
 import Footer from "../../components/layout/Footer/Footer";
 import Hero from "../../sections/Hero/Hero";
 import Solutions from "../../sections/Solutions/Solutions";
+import Loader from "../../components/ui/Loader/Loader";
 
 const Home = () => {
     const { homeData, loading, error, refetch } = useContext(HomeContext);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loader/>;
     }
 
     if (error) {

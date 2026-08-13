@@ -7,6 +7,7 @@ import Container from "../../ui/Container/Container";
 import MegaMenu from "./MegaMenu/MegaMenu";
 
 import styles from "./Header.module.scss";
+import { getAssetUrl } from "../../../services/utils";
 
 const Header = ({ navigation }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] =
@@ -38,8 +39,12 @@ const Header = ({ navigation }) => {
                     <a
                         href={logo.href}
                         className={styles.logo}
+                        aria-label="MetaTech home"
                     >
-                        {logo.text}
+                        <img
+                            src={getAssetUrl(logo.image)}
+                            alt={logo.text}
+                        />
                     </a>
 
                     {/* =====================

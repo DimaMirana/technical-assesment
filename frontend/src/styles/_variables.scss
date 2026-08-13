@@ -37,6 +37,46 @@ $section-spacing-desktop: 80px;
 // Transition
 $transition-default: 0.2s ease;
 
-// FONTS
+// Fonts families
 $font-heading: "Bricolage Grotesque Variable", sans-serif;
 $font-body: "Manrope Variable", sans-serif;
+
+// ========================
+// Font Weights
+// ========================
+
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+// ========================
+// Font Sizes
+// ========================
+
+$font-xs: 12px;
+$font-sm: 14px;
+$font-md: 16px;
+$font-lg: 18px;
+$font-xl: 24px;
+$font-2xl: 32px;
+$font-3xl: 48px;
+$font-4xl: 72px;
+
+// ========================
+// Line Heights
+// ========================
+
+$line-height-tight: 1;
+$line-height-snug: 1.2;
+$line-height-normal: 1.4;
+$line-height-relaxed: 1.6;
+
+// ========================
+// Letter Spacing
+// ========================
+
+$letter-spacing-tight: -0.05em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.02em;

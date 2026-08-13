@@ -1,7 +1,8 @@
 const navigationData = {
     logo: {
         text: "METATECH",
-        href: "/"
+        href: "/",
+        image: "/img/metatech-logo.svg"
     },
 
     items: [

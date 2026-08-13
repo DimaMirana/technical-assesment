@@ -25,9 +25,17 @@
 }
 
 .logo {
-  font-family: $font-body;
-  font-size: 20px;
-  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  img {
+    display: block;
+
+    width: 120px;
+    height: auto;
+  }
 }
 
 .desktopNav,
@@ -160,6 +168,10 @@
 
   .logo {
     justify-self: start;
+
+    img {
+      width: 145px;
+    }
   }
 
   .desktopNav {
